@@ -1,0 +1,5 @@
+##DDRBS
+全称为Remote backup system based on data de-duplication，即基于重复数据删除的远程备份系统。DDRBS是一个文件备份系统，该系统在备份文件的时候能够找出文件中已经备份了的重复数据，从而只备份文件中新增的数据，有效地减少了备份网络流量并且节约了备份数据的存储空间。
+
+##使用
+本系统运行在Linux下。DDRBS_Client为系统客户端源代码，make编译之后生成ddrbs_cli执行程序，进行备份的时候输入命令ddrbs_cli path，path为需要备份的目录。DDRBS_Server为服务器源代码，同样make编译之后生成ddrbs_ser执行程序，直接运行即可。另外ddrbs_cli中备份存储的服务器地址是写在程序中的，如要更改需修改相应源代码。同时在运行程序之前需要安装zeromq和leveldb两个库。
